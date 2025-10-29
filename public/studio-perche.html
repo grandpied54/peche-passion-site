@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Studio Perché — Disponibilités</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f7f9fb;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    #back-link {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #back-link a {
+      display: inline-block;
+      background-color: #0071c2;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    #back-link a:hover {
+      background-color: #005a99;
+    }
+
+    #legend {
+      text-align: center;
+      margin: 12px 0 18px;
+      font-size: 15px;
+      color: #444;
+    }
+    #legend span {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    /* --- LAYOUT PRINCIPAL --- */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* --- SLIDER --- */
+    .slider {
+      position: relative;
+      flex: 1 1 500px;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      background: #000;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slider img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 22px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+      transition: background 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    /* --- CALENDRIER --- */
+    #calendar {
+      flex: 1 1 500px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fc-event {
+      border: none;
+      color: #fff;
+      font-size: 0.8em;
+      border-radius: 8px;
+      padding: 2px 4px;
+    }
+
+    .fc .fc-daygrid-day-number {
+      font-size: 0.85em;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .slider,
+      #calendar {
+        width: 95%;
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Disponibilités - Studio Perché</h1>
+
+  <div id="back-link">
+    <a href="index.html">🏠 Retour à l'accueil</a>
+  </div>
+
+  <div id="legend">
+    <span style="background:#ff5a5f"></span> Airbnb
+    &nbsp;&nbsp;&nbsp;
+    <span style="background:#0071c2"></span> Booking
+    &nbsp;&nbsp;&nbsp;
+    <span style="background:#888"></span> Fermé
+  </div>
+
+  <div class="container">
+    <!-- 📸 SLIDER À GAUCHE -->
+    <div class="slider">
+      <img src="assets/studio-1.jpg" class="active" alt="Studio Perché 1">
+      <img src="assets/studio-2.jpg" alt="Studio Perché 2">
+      <img src="assets/studio-3.jpg" alt="Studio Perché 3">
+      <img src="assets/studio-4.jpg" alt="Studio Perché 4">
+      <img src="assets/studio-5.jpg" alt="Studio Perché 5">
+      <img src="assets/studio-6.jpg" alt="Studio Perché 6">
+      <button class="nav-btn prev-btn">❮</button>
+      <button class="nav-btn next-btn">❯</button>
+    </div>
+
+    <!-- 📅 CALENDRIER À DROITE -->
+    <div id="calendar"></div>
+  </div>
+
+  <!-- FullCalendar -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/locales/fr.global.min.js"></script>
+  <script>
+    // --- SLIDER ---
+    const images = document.querySelectorAll(".slider img");
+    let current = 0;
+    function showImage(i) {
+      images.forEach((img, idx) => img.classList.toggle("active", idx === i));
+    }
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+    document.querySelector(".next-btn").addEventListener("click", () => {
+      clearInterval(interval);
+      nextImage();
+      interval = setInterval(nextImage, 4000);
+    });
+    document.querySelector(".prev-btn").addEventListener("click", () => {
+      clearInterval(interval);
+      prevImage();
+      interval = setInterval(nextImage, 4000);
+    });
+    let interval = setInterval(nextImage, 4000);
+
+    // --- CALENDRIER ---
+    (async function () {
+      try {
+        const res = await fetch(
+          "https://pechepassioncalendrier.vercel.app/api/merged?which=studio",
+          { cache: "no-store" }
+        );
+        const data = await res.json();
+        const calendar = new FullCalendar.Calendar(
+          document.getElementById("calendar"),
+          {
+            initialView: "dayGridMonth",
+            locale: "fr",
+            timeZone: "local",
+            height: "auto",
+            events: data.events,
+            eventDidMount(info) {
+              const s = new Date(info.event.start);
+              const e = new Date(info.event.end);
+              info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
+            },
+          }
+        );
+        calendar.render();
+      } catch (err) {
+        console.error("Erreur:", err);
+        document.body.insertAdjacentHTML(
+          "beforeend",
+          '<p style="color:red;text-align:center">Erreur de chargement.</p>'
+        );
+      }
+    })();
+  </script>
+</body>
+</html>
