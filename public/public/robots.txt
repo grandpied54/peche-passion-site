@@ -1,1 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peche-passion-site.vercel.app/sitemap.xml
 
