@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Studio Perché — Disponibilités</title>
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet" />
+
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -32,7 +33,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: background 0.2s ease;
-      margin-right: 8px;
+      margin-right: 10px;
     }
     #back-link a:hover {
       background-color: #005a99;
@@ -40,17 +41,17 @@
 
     .booking-btn {
       display: inline-block;
-      background-color: #ff5a5f;
+      background-color: #003580;
       color: white;
       padding: 10px 18px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s ease;
-      margin-right: 8px;
+      transition: 0.2s;
+      margin-right: 10px;
     }
     .booking-btn:hover {
-      background-color: #e04b4b;
+      background-color: #00245a;
     }
 
     .airbnb-btn {
@@ -61,8 +62,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      margin-right: 0;
-      transition: background 0.2s ease;
+      transition: 0.2s;
     }
     .airbnb-btn:hover {
       background-color: #d93552;
@@ -74,6 +74,7 @@
       font-size: 15px;
       color: #444;
     }
+
     #legend span {
       display: inline-block;
       width: 14px;
@@ -125,7 +126,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0,0,0,0.4);
       color: white;
       border: none;
       padding: 8px 12px;
@@ -133,20 +134,14 @@
       cursor: pointer;
       border-radius: 50%;
       z-index: 2;
-      transition: background 0.3s;
+      transition: background 0.2s;
     }
-
     .nav-btn:hover {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0,0,0,0.6);
     }
 
-    .prev-btn {
-      left: 10px;
-    }
-
-    .next-btn {
-      right: 10px;
-    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
 
     /* --- CALENDRIER --- */
     #calendar {
@@ -178,7 +173,6 @@
         align-items: center;
         gap: 25px;
       }
-
       .slider, #calendar {
         width: 95%;
         aspect-ratio: 4 / 3;
@@ -187,12 +181,22 @@
   </style>
 </head>
 <body>
-  <h1>Disponibilités - Studio Perché</h1>
+  <h1>Disponibilités – Studio Perché</h1>
 
   <div id="back-link">
-    <a href="index.html">🏠 Retour à l’accueil</a>
-    <a class="booking-btn" href="https://www.booking.com/hotel/fr/riviere-et-jardin-a-vos-pieds.fr.html" target="_blank" rel="noopener">Réserver sur Booking</a>
-    <a class="airbnb-btn" href="https://www.airbnb.fr/rooms/1017199225456476736" target="_blank" rel="noopener">Réserver sur Airbnb</a>
+    <a href="index.html">🏠 Accueil</a>
+
+    <a class="booking-btn"
+       href="https://www.booking.com/hotel/fr/riviere-et-jardin-a-vos-pieds.fr.html"
+       target="_blank" rel="noopener">
+       Réserver sur Booking
+    </a>
+
+    <a class="airbnb-btn"
+       href="https://www.airbnb.fr/rooms/1017199225456476736"
+       target="_blank" rel="noopener">
+       Réserver sur Airbnb
+    </a>
   </div>
 
   <div id="legend">
@@ -221,54 +225,73 @@
   <!-- FullCalendar -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/locales/fr.global.min.js"></script>
+
   <script>
     const images = document.querySelectorAll(".slider img");
     let current = 0;
+
     function showImage(i) {
       images.forEach((img, idx) => img.classList.toggle("active", idx === i));
     }
+
     function nextImage() {
       current = (current + 1) % images.length;
       showImage(current);
     }
+
     function prevImage() {
       current = (current - 1 + images.length) % images.length;
       showImage(current);
     }
+
     document.querySelector(".next-btn").addEventListener("click", () => {
       clearInterval(interval);
       nextImage();
       interval = setInterval(nextImage, 4000);
     });
+
     document.querySelector(".prev-btn").addEventListener("click", () => {
       clearInterval(interval);
       prevImage();
       interval = setInterval(nextImage, 4000);
     });
+
     let interval = setInterval(nextImage, 4000);
 
     (async function () {
       try {
-        const res = await fetch("https://pechepassioncalendrier.vercel.app/api/merged?which=studio", { cache: "no-store" });
+        const res = await fetch(
+          "https://pechepassioncalendrier.vercel.app/api/merged?which=studio",
+          { cache: "no-store" }
+        );
         const data = await res.json();
-        const calendar = new FullCalendar.Calendar(document.getElementById("calendar"), {
-          initialView: "dayGridMonth",
-          locale: "fr",
-          timeZone: "local",
-          height: "auto",
-          events: data.events,
-          eventDidMount(info) {
-            const s = new Date(info.event.start);
-            const e = new Date(info.event.end);
-            info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
-          },
-        });
+
+        const calendar = new FullCalendar.Calendar(
+          document.getElementById("calendar"),
+          {
+            initialView: "dayGridMonth",
+            locale: "fr",
+            timeZone: "local",
+            height: "auto",
+            events: data.events,
+            eventDidMount(info) {
+              const s = new Date(info.event.start);
+              const e = new Date(info.event.end);
+              info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
+            },
+          }
+        );
+
         calendar.render();
       } catch (err) {
         console.error("Erreur:", err);
-        document.body.insertAdjacentHTML("beforeend", '<p style="color:red;text-align:center">Erreur de chargement.</p>');
+        document.body.insertAdjacentHTML(
+          "beforeend",
+          '<p style="color:red;text-align:center">Erreur de chargement.</p>'
+        );
       }
     })();
   </script>
+
 </body>
 </html>
