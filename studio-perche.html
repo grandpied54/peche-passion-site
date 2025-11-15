@@ -32,9 +32,40 @@
       text-decoration: none;
       font-weight: 600;
       transition: background 0.2s ease;
+      margin-right: 8px;
     }
     #back-link a:hover {
       background-color: #005a99;
+    }
+
+    .booking-btn {
+      display: inline-block;
+      background-color: #ff5a5f;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+      margin-right: 8px;
+    }
+    .booking-btn:hover {
+      background-color: #e04b4b;
+    }
+
+    .airbnb-btn {
+      display: inline-block;
+      background-color: #FF385C;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 0;
+      transition: background 0.2s ease;
+    }
+    .airbnb-btn:hover {
+      background-color: #d93552;
     }
 
     #legend {
@@ -141,7 +172,6 @@
       font-size: 0.85em;
     }
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -149,8 +179,7 @@
         gap: 25px;
       }
 
-      .slider,
-      #calendar {
+      .slider, #calendar {
         width: 95%;
         aspect-ratio: 4 / 3;
       }
@@ -161,7 +190,9 @@
   <h1>Disponibilités - Studio Perché</h1>
 
   <div id="back-link">
-    <a href="index.html">🏠 Retour à l'accueil</a>
+    <a href="index.html">🏠 Retour à l’accueil</a>
+    <a class="booking-btn" href="https://www.booking.com/hotel/fr/riviere-et-jardin-a-vos-pieds.fr.html" target="_blank" rel="noopener">Réserver sur Booking</a>
+    <a class="airbnb-btn" href="https://www.airbnb.fr/rooms/1017199225456476736" target="_blank" rel="noopener">Réserver sur Airbnb</a>
   </div>
 
   <div id="legend">
@@ -173,7 +204,6 @@
   </div>
 
   <div class="container">
-    <!-- 📸 SLIDER À GAUCHE -->
     <div class="slider">
       <img src="assets/studio-1.jpg" class="active" alt="Studio Perché 1">
       <img src="assets/studio-2.jpg" alt="Studio Perché 2">
@@ -185,7 +215,6 @@
       <button class="nav-btn next-btn">❯</button>
     </div>
 
-    <!-- 📅 CALENDRIER À DROITE -->
     <div id="calendar"></div>
   </div>
 
@@ -193,7 +222,6 @@
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/locales/fr.global.min.js"></script>
   <script>
-    // --- SLIDER ---
     const images = document.querySelectorAll(".slider img");
     let current = 0;
     function showImage(i) {
@@ -219,36 +247,26 @@
     });
     let interval = setInterval(nextImage, 4000);
 
-    // --- CALENDRIER ---
     (async function () {
       try {
-        const res = await fetch(
-          "https://pechepassioncalendrier.vercel.app/api/merged?which=studio",
-          { cache: "no-store" }
-        );
+        const res = await fetch("https://pechepassioncalendrier.vercel.app/api/merged?which=studio", { cache: "no-store" });
         const data = await res.json();
-        const calendar = new FullCalendar.Calendar(
-          document.getElementById("calendar"),
-          {
-            initialView: "dayGridMonth",
-            locale: "fr",
-            timeZone: "local",
-            height: "auto",
-            events: data.events,
-            eventDidMount(info) {
-              const s = new Date(info.event.start);
-              const e = new Date(info.event.end);
-              info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
-            },
-          }
-        );
+        const calendar = new FullCalendar.Calendar(document.getElementById("calendar"), {
+          initialView: "dayGridMonth",
+          locale: "fr",
+          timeZone: "local",
+          height: "auto",
+          events: data.events,
+          eventDidMount(info) {
+            const s = new Date(info.event.start);
+            const e = new Date(info.event.end);
+            info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
+          },
+        });
         calendar.render();
       } catch (err) {
         console.error("Erreur:", err);
-        document.body.insertAdjacentHTML(
-          "beforeend",
-          '<p style="color:red;text-align:center">Erreur de chargement.</p>'
-        );
+        document.body.insertAdjacentHTML("beforeend", '<p style="color:red;text-align:center">Erreur de chargement.</p>');
       }
     })();
   </script>
