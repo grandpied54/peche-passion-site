@@ -19,54 +19,31 @@
       margin-bottom: 8px;
     }
 
-    #back-link {
+    /* --- BOUTONS EN HAUT --- */
+    #top-buttons {
       text-align: center;
       margin-bottom: 20px;
     }
 
-    #back-link a {
+    #top-buttons a {
       display: inline-block;
-      background-color: #0071c2;
-      color: white;
       padding: 10px 18px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s ease;
+      color: #fff;
       margin-right: 10px;
-    }
-    #back-link a:hover {
-      background-color: #005a99;
-    }
-
-    .booking-btn {
-      display: inline-block;
-      background-color: #003580;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-      margin-right: 10px;
-    }
-    .booking-btn:hover {
-      background-color: #00245a;
-    }
-
-    .airbnb-btn {
-      display: inline-block;
-      background-color: #FF385C;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
       transition: 0.2s;
     }
-    .airbnb-btn:hover {
-      background-color: #d93552;
-    }
+
+    .home-btn { background-color: #0071c2; }
+    .home-btn:hover { background-color: #005a99; }
+
+    .booking-btn { background-color: #003580; }
+    .booking-btn:hover { background-color: #00245a; }
+
+    .airbnb-btn { background-color: #FF385C; }
+    .airbnb-btn:hover { background-color: #d93552; }
 
     #legend {
       text-align: center;
@@ -74,7 +51,6 @@
       font-size: 15px;
       color: #444;
     }
-
     #legend span {
       display: inline-block;
       width: 14px;
@@ -102,7 +78,7 @@
       aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
       background: #000;
     }
 
@@ -117,10 +93,7 @@
       transition: opacity 1s ease-in-out;
     }
 
-    .slider img.active {
-      opacity: 1;
-      z-index: 1;
-    }
+    .slider img.active { opacity: 1; z-index: 1; }
 
     .nav-btn {
       position: absolute;
@@ -134,10 +107,6 @@
       cursor: pointer;
       border-radius: 50%;
       z-index: 2;
-      transition: background 0.2s;
-    }
-    .nav-btn:hover {
-      background: rgba(0,0,0,0.6);
     }
 
     .prev-btn { left: 10px; }
@@ -148,11 +117,8 @@
       flex: 1 1 500px;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
       padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .fc-event {
@@ -163,10 +129,6 @@
       padding: 2px 4px;
     }
 
-    .fc .fc-daygrid-day-number {
-      font-size: 0.85em;
-    }
-
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -175,16 +137,17 @@
       }
       .slider, #calendar {
         width: 95%;
-        aspect-ratio: 4 / 3;
       }
     }
   </style>
 </head>
 <body>
+
   <h1>Disponibilités – Studio Perché</h1>
 
-  <div id="back-link">
-    <a href="index.html">🏠 Accueil</a>
+  <!-- 🔵 BOUTONS EN HAUT -->
+  <div id="top-buttons">
+    <a class="home-btn" href="index.html">🏠 Accueil</a>
 
     <a class="booking-btn"
        href="https://www.booking.com/hotel/fr/riviere-et-jardin-a-vos-pieds.fr.html"
@@ -201,20 +164,20 @@
 
   <div id="legend">
     <span style="background:#ff5a5f"></span> Airbnb
-    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;
     <span style="background:#0071c2"></span> Booking
-    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;
     <span style="background:#888"></span> Fermé
   </div>
 
   <div class="container">
     <div class="slider">
-      <img src="assets/studio-1.jpg" class="active" alt="Studio Perché 1">
-      <img src="assets/studio-2.jpg" alt="Studio Perché 2">
-      <img src="assets/studio-3.jpg" alt="Studio Perché 3">
-      <img src="assets/studio-4.jpg" alt="Studio Perché 4">
-      <img src="assets/studio-5.jpg" alt="Studio Perché 5">
-      <img src="assets/studio-6.jpg" alt="Studio Perché 6">
+      <img src="assets/studio-1.jpg" class="active">
+      <img src="assets/studio-2.jpg">
+      <img src="assets/studio-3.jpg">
+      <img src="assets/studio-4.jpg">
+      <img src="assets/studio-5.jpg">
+      <img src="assets/studio-6.jpg">
       <button class="nav-btn prev-btn">❮</button>
       <button class="nav-btn next-btn">❯</button>
     </div>
@@ -222,7 +185,6 @@
     <div id="calendar"></div>
   </div>
 
-  <!-- FullCalendar -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/locales/fr.global.min.js"></script>
 
@@ -233,12 +195,10 @@
     function showImage(i) {
       images.forEach((img, idx) => img.classList.toggle("active", idx === i));
     }
-
     function nextImage() {
       current = (current + 1) % images.length;
       showImage(current);
     }
-
     function prevImage() {
       current = (current - 1 + images.length) % images.length;
       showImage(current);
@@ -249,7 +209,6 @@
       nextImage();
       interval = setInterval(nextImage, 4000);
     });
-
     document.querySelector(".prev-btn").addEventListener("click", () => {
       clearInterval(interval);
       prevImage();
@@ -260,35 +219,25 @@
 
     (async function () {
       try {
-        const res = await fetch(
-          "https://pechepassioncalendrier.vercel.app/api/merged?which=studio",
-          { cache: "no-store" }
-        );
+        const res = await fetch("https://pechepassioncalendrier.vercel.app/api/merged?which=studio", { cache: "no-store" });
         const data = await res.json();
 
-        const calendar = new FullCalendar.Calendar(
-          document.getElementById("calendar"),
-          {
-            initialView: "dayGridMonth",
-            locale: "fr",
-            timeZone: "local",
-            height: "auto",
-            events: data.events,
-            eventDidMount(info) {
-              const s = new Date(info.event.start);
-              const e = new Date(info.event.end);
-              info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
-            },
+        const calendar = new FullCalendar.Calendar(document.getElementById("calendar"), {
+          initialView: "dayGridMonth",
+          locale: "fr",
+          timeZone: "local",
+          height: "auto",
+          events: data.events,
+          eventDidMount(info) {
+            const s = new Date(info.event.start);
+            const e = new Date(info.event.end);
+            info.el.title = `${info.event.title}\n${s.toLocaleDateString()} → ${new Date(e - 1).toLocaleDateString()}`;
           }
-        );
+        });
 
         calendar.render();
       } catch (err) {
-        console.error("Erreur:", err);
-        document.body.insertAdjacentHTML(
-          "beforeend",
-          '<p style="color:red;text-align:center">Erreur de chargement.</p>'
-        );
+        document.body.insertAdjacentHTML("beforeend", "<p style='color:red;text-align:center'>Erreur de chargement.</p>");
       }
     })();
   </script>
