@@ -2,35 +2,18 @@
   "version": 2,
   "cleanUrls": false,
   "trailingSlash": false,
-  "routes": [
-    { "src": "^/$", "dest": "/index.html" },
-
-    {
-      "src": "^/sitemap\\.xml$",
-      "dest": "/sitemap.xml",
-      "headers": {
-        "Content-Type": "application/xml; charset=utf-8",
-        "Cache-Control": "public, max-age=3600"
-      }
-    },
-
-    {
-      "src": "^/robots\\.txt$",
-      "dest": "/robots.txt",
-      "headers": {
-        "Content-Type": "text/plain; charset=utf-8",
-        "Cache-Control": "public, max-age=3600"
-      }
-    },
-
-    { "src": "^/(.*)$", "dest": "/$1" }
-  ],
-
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/sitemap.xml",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
       ]
     }
   ]
