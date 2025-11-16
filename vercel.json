@@ -2,6 +2,10 @@
   "version": 2,
   "cleanUrls": false,
   "trailingSlash": false,
+  "routes": [
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
@@ -15,12 +19,6 @@
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     }
   ]
