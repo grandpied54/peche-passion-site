@@ -1,24 +1,11 @@
 {
-  "name": "Pêche Passion Confort",
-  "short_name": "PPC",
+  "name": "La Maison du Pêcheur",
+  "short_name": "Maison du Pêcheur",
   "icons": [
-    {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ],
-  "theme_color": "#045BAD",
-  "background_color": "#045BAD",
-  "display": "standalone"
+  "theme_color": "#1f4d3a",
+  "background_color": "#ffffff",
+  "display": "browser"
 }

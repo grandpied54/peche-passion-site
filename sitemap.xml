@@ -1,23 +1,111 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://peche-passion-site.vercel.app/</loc>
-    <lastmod>2025-11-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/"/>
   </url>
   <url>
-    <loc>https://peche-passion-site.vercel.app/tiny-house.html</loc>
-    <lastmod>2025-11-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://peche-passion-site.vercel.app/en</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/"/>
   </url>
   <url>
-    <loc>https://peche-passion-site.vercel.app/studio-perche.html</loc>
-    <lastmod>2025-11-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://peche-passion-site.vercel.app/de</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/nl</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/tiny-house</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/tiny-house"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/en/tiny-house</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/tiny-house"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/de/tiny-house</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/tiny-house"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/nl/tiny-house</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/tiny-house"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/tiny-house"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/studio-perche</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/studio-perche"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/en/studio-perche</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/studio-perche"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/de/studio-perche</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/studio-perche"/>
+  </url>
+  <url>
+    <loc>https://peche-passion-site.vercel.app/nl/studio-perche</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://peche-passion-site.vercel.app/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://peche-passion-site.vercel.app/en/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://peche-passion-site.vercel.app/de/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://peche-passion-site.vercel.app/nl/studio-perche"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://peche-passion-site.vercel.app/studio-perche"/>
   </url>
 </urlset>
-
