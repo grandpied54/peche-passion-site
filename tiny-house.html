@@ -143,11 +143,20 @@
         width: 95%;
       }
     }
+
+    .desc { max-width:1100px; margin:40px auto 10px; background:#fff; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,.08); padding:24px 28px; color:#333; line-height:1.6; }
+    .desc h2 { color:#1f3d2b; margin:1.2em 0 .4em; font-size:1.35rem; }
+    .desc h2:first-child { margin-top:0; }
+    .desc ul { padding-left:1.2em; margin:.3em 0 1em; }
+    .desc .cols { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    @media (max-width:800px) { .desc .cols { grid-template-columns:1fr; } .desc { padding:18px; } }
+    .desc a { color:#0071c2; }
   </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "House", "name": "Tiny House — Pêche Passion Confort, Pulligny", "description": "Notre Tiny House est un petit chalet en bois de 15 m², bien isolé, posé dans le jardin face au Madon, à Pulligny (Meurthe-et-Moselle). Pensée pour un couple ou un voyageur seul, elle offre un vrai lit double, une cuisine complète et une salle d'eau moderne. Ici, on s'endort avec les vrais bruits de la nature, à seulement 20 minutes de Nancy.", "url": "https://peche-passion-site.vercel.app/tiny-house.html", "image": "https://peche-passion-site.vercel.app/assets/tiny-1.jpg", "occupancy": {"@type": "QuantitativeValue", "maxValue": 2}, "address": {"@type": "PostalAddress", "streetAddress": "1295 rue de Pierreville", "postalCode": "54160", "addressLocality": "Pulligny", "addressCountry": "FR"}}</script>
 </head>
 <body>
 
-  <h1>Disponibilités – Tiny House</h1>
+  <h1>Tiny House au bord de la rivière à Pulligny — Disponibilités</h1>
 
   <!-- 🔵 BOUTONS EN HAUT -->
   <div id="top-buttons">
@@ -190,6 +199,31 @@
 
     <div id="calendar"></div>
   </div>
+
+  <section class="desc">
+    <h2>Le logement</h2>
+    <p>Notre Tiny House est un petit chalet en bois de 15 m², bien isolé, posé dans le jardin face au Madon, à Pulligny (Meurthe-et-Moselle). Pensée pour un couple ou un voyageur seul, elle offre un vrai lit double, une cuisine complète et une salle d'eau moderne. Ici, on s'endort avec les vrais bruits de la nature, à seulement 20 minutes de Nancy.</p>
+    <div class="cols">
+      <div>
+        <h2>Équipements</h2>
+        <ul><li>1 lit double — 2 voyageurs</li><li>Cuisine équipée : plaques, four, hotte, micro-ondes, réfrigérateur</li><li>Salle d'eau avec douche et WC</li><li>Télévision et Wi-Fi rapide</li><li>Vue sur le jardin et la rivière</li><li>Parking privé (voitures et motos)</li></ul>
+      </div>
+      <div>
+        <h2>Infos pratiques</h2>
+        <ul>
+          <li>Arrivée à partir de 18h, départ avant 13h</li>
+          <li>Arrivée tardive possible, prévenez-nous simplement</li>
+          <li>Pêche depuis le jardin (carte de pêche requise)</li>
+          <li>20 min de Nancy, proche de Neuves-Maisons, Toul et Lunéville</li>
+          <li>Adresse : 1295 rue de Pierreville, 54160 Pulligny</li>
+        </ul>
+        <h2>Réserver ou nous contacter</h2>
+        <p>Réservez sur Airbnb ou Booking avec les boutons en haut de page, ou appelez le <a href="tel:+33662107833">06 62 10 78 33</a>.</p>
+      </div>
+    </div>
+    <h2>Voir aussi</h2>
+    <p><a href="studio-perche.html">Studio Perché</a> : studio pour 4 avec terrasse sur la rivière. Plus de photos et les versions anglaise, allemande et néerlandaise sur <a href="https://tiny-house-pulligny.vercel.app/">le site complet du Tiny House</a>. <a href="index.html">Retour à l'accueil</a>.</p>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/locales/fr.global.min.js"></script>
